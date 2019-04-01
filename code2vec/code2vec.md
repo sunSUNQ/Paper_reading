@@ -31,9 +31,9 @@
 
 ## 结果展示
 
-![效果展示](C:\Users\varas\Paper_reading\code2vec\image\result_show.png)
+![效果展示](https://github.com/sunSUNQ/Paper_reading/raw/master/code2vec/image/result_show.png)
 
-![1554040374206](C:\Users\varas\Paper_reading\code2vec\image\result_AST.png)
+![1554040374206](https://github.com/sunSUNQ/Paper_reading/raw/master/code2vec/image/result_AST.png)
 
 ​	对于相似的函数内容也可以很好的辨别出不同的语义，会给出多种上下文路径进行预测。同时可以看到在代码段的标出，不同的线表示不同的path-context，线的粗细表示attention程度。
 
@@ -70,11 +70,11 @@
 
 ## 模型解释
 
-![1554041057113](C:\Users\varas\Paper_reading\code2vec\image\model.png)
+![1554041057113](https://github.com/sunSUNQ/Paper_reading/raw/master/code2vec/image/model.png)
 
 ### 代码表示
 
-![1554041208517](C:\Users\varas\Paper_reading\code2vec\image\path_context.png)
+![1554041208517](https://github.com/sunSUNQ/Paper_reading/raw/master/code2vec/image/path_context.png)
 
 - value_vocab：叶子结点的值的字典
 - path_vocabj：path_context的字典
@@ -86,31 +86,31 @@
 
 ## 数据集
 
-![1554082510075](C:\Users\varas\Paper_reading\code2vec\image\dataset.png)
+![1554082510075](https://github.com/sunSUNQ/Paper_reading/raw/master/code2vec/image/dataset.png)
 
 使用了 10072个Github上开源的java语言仓库，选择了star最多的，关注度最高的。并对所有的项目文件进行拆分打散。
 
 ## 实验结果
 
-![1554041630775](C:\Users\varas\Paper_reading\code2vec\image\comparation.png)
+![1554041630775](https://github.com/sunSUNQ/Paper_reading/raw/master/code2vec/image/comparation.png)
 
 - 实验结果对比其他的模型方法来说效果更好，训练时间更短，同时数据集也更复杂。
 
-![1554041703074](C:\Users\varas\Paper_reading\code2vec\image\attention_compare.png)
+![1554041703074](https://github.com/sunSUNQ/Paper_reading/raw/master/code2vec/image/attention_compare.png)
 
 - 对比与对于每个path-context使用相同权重，与只关注重要的几个path-context与使用细粒度的element-wise来说，在效率保证的情况下，选择我们的模型具有很优秀的效果，同时还具有可解释性。
 
-![1554041816850](C:\Users\varas\Paper_reading\code2vec\image\path_compare.png)
+![1554041816850](https://github.com/sunSUNQ/Paper_reading/raw/master/code2vec/image/path_compare.png)
 
 - 使用开始叶子结点-路径-结束叶子结点的三元祖的模式来表示path-context，对比于其他的方法效率
 
-![1554041923238](C:\Users\varas\Paper_reading\code2vec\image\detail_show.png)
+![1554041923238](https://github.com/sunSUNQ/Paper_reading/raw/master/code2vec/image/detail_show.png)
 
-![1554041935604](C:\Users\varas\Paper_reading\code2vec\image\detail_AST.png)
+![1554041935604](https://github.com/sunSUNQ/Paper_reading/raw/master/code2vec/image/detail_AST.png)
 
 - 使用的向量近似方法：
 
-![1554041983833](C:\Users\varas\Paper_reading\code2vec\image\rules.png)
+![1554041983833](https://github.com/sunSUNQ/Paper_reading/raw/master/code2vec/image/rules.png)
 
 
 
