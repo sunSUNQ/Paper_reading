@@ -63,22 +63,22 @@ Automated Software Engineering （ASE2010）
 
 > “allows remote attackers to bypass the protection mechanism for codebase principals and execute arbitrary script via the -moz-binding CSS property in a signed JAR file”
 
-![1556244786269](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1556244786269.png)
+![1556244786269](https://github.com/sunSUNQ/Paper_reading/raw/master/Detection%20of%20Recurring%20Software%20Vulnerabilities/image/1556244786269.png)
 
-![1556244748307](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1556244748307.png)
+![1556244748307](https://github.com/sunSUNQ/Paper_reading/raw/master/Detection%20of%20Recurring%20Software%20Vulnerabilities/image/1556244748307.png)
 
 - CVE-2009-0021（Type2）
 
 > allows remote attackers to bypass validation of the certificate chain via a malformed SSL/TLS signature for DSA and ECDSA keys
 
-![1556244974397](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1556244974397.png)
+![1556244974397](https://github.com/sunSUNQ/Paper_reading/raw/master/Detection%20of%20Recurring%20Software%20Vulnerabilities/image/1556244974397.png)
 
 - Type1的样例展示：一般的都是在文本（被调用的函数名称、变量名称、文字、值等）和结构（语句、分支、表达式等结构）相同或者高度相似。
 - Type2的样例展示：类似的方法重用、类似的输入检查和输出处理等等
 
 ## 相似性检测的方法
 
-![1556245227435](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1556245227435.png)
+![1556245227435](https://github.com/sunSUNQ/Paper_reading/raw/master/Detection%20of%20Recurring%20Software%20Vulnerabilities/image/1556245227435.png)
 
 - 查找所有的代码中是否存在与已知漏洞代码相似的片段
 - 生成候选的代码片段
@@ -88,7 +88,7 @@ Automated Software Engineering （ASE2010）
 
 ### 特征提取和相似性度量（Type1）
 
-![1556246245750](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1556246245750.png)
+![1556246245750](https://github.com/sunSUNQ/Paper_reading/raw/master/Detection%20of%20Recurring%20Software%20Vulnerabilities/image/1556246245750.png)
 
 1. 分析代码生成AST，称为extended AST（xAST）。每个节点表示一个函数调用、一个文字、一个变量、一个操作符等；每个节点的标签包含节点的类型、签名、参数、值等。
 2. 将xAST转换为向量，使用Exas方法，生成Ex（F（A）），其中F（A）表示A代码片段的特征。
@@ -99,7 +99,7 @@ Automated Software Engineering （ASE2010）
 
 ### 特征提取和相似性度量（Type2）
 
-![1556246306728](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1556246306728.png)
+![1556246306728](https://github.com/sunSUNQ/Paper_reading/raw/master/Detection%20of%20Recurring%20Software%20Vulnerabilities/image/1556246306728.png)
 
 1. 分析代码生成的extended GRaph-based Usage Model，xGRUM，有向的标记非循环图。
    - 每个操作节点表示一个方法调用或者函数
@@ -127,17 +127,17 @@ Automated Software Engineering （ASE2010）
 
 ## 数据集
 
-![1556246903902](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1556246903902.png)
+![1556246903902](https://github.com/sunSUNQ/Paper_reading/raw/master/Detection%20of%20Recurring%20Software%20Vulnerabilities/image/1556246903902.png)
 
 - 对于Type1选择了基于Mozilla框架的开源项目FireFox、Thunderbird、SeaMonkey选择了一共三个开源项目的51个版本，其中有48个漏洞信息。
 
-![1556247052400](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1556247052400.png)
+![1556247052400](https://github.com/sunSUNQ/Paper_reading/raw/master/Detection%20of%20Recurring%20Software%20Vulnerabilities/image/1556247052400.png)
 
 - 对于Type2选择了12个漏洞类型、116个开源项目的125个版本。
 
 ## 结果展示
 
-![img](file://C:/Users/varas/AppData/Roaming/Typora/typora-user-images/1556245079662.png?lastModify=1556247050)
+![img](https://github.com/sunSUNQ/Paper_reading/raw/master/Detection%20of%20Recurring%20Software%20Vulnerabilities/image/1556245079662.png)
 
 ​	Report是指手动收集到的有漏洞的报告个数、Group是人工分析的重用代码的种类、RV是总共跑出来的重用漏洞的个数。
 
