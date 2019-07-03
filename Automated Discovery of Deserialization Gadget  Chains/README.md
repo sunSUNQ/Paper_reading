@@ -23,7 +23,7 @@
 
 ## Gadget Inspector
 
-![1562071570259](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1562071570259.png)
+![1562071570259](https://github.com/sunSUNQ/Paper_reading/raw/master/Automated%20Discovery%20of%20Deserialization%20Gadget%20%20Chains/image/1562071570259.png)
 
 - 输入是一整个程序或者是一个库文件
 - 输出就是一段一段的反射链
@@ -32,58 +32,58 @@
 
 - 生成类继承的层次结构以及方法重写的层次结构（JDK反射API可以轻松完成此步骤）
 
-![1562071877738](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1562071877738.png)
+![1562071877738](https://github.com/sunSUNQ/Paper_reading/raw/master/Automated%20Discovery%20of%20Deserialization%20Gadget%20%20Chains/image/1562071877738.png)
 
 ### STEP2：Passthrough Dataflow Discovery
 
 - 默认分支都可到达，默认分支可控就分支下可控
 
-![1562073736842](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1562073736842.png)
+![1562073736842](https://github.com/sunSUNQ/Paper_reading/raw/master/Automated%20Discovery%20of%20Deserialization%20Gadget%20%20Chains/image/1562073736842.png)
 
 ### STEP3：Passthrough Callgraph Discovery 
 
 - 函数参数和方法调用都创建一个数据流分析，使用符号执行就可以实现。
 
-![1562073804800](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1562073804800.png)
+![1562073804800](https://github.com/sunSUNQ/Paper_reading/raw/master/Automated%20Discovery%20of%20Deserialization%20Gadget%20%20Chains/image/1562073804800.png)
 
 ### STEP4：Gadget Chain Source Discovery
 
 - 使用第一步生成的层析结构信息来获取调用链的源方法（source method）
 
-![1562073923644](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1562073923644.png)
+![1562073923644](https://github.com/sunSUNQ/Paper_reading/raw/master/Automated%20Discovery%20of%20Deserialization%20Gadget%20%20Chains/image/1562073923644.png)
 
 ### STEP5：Call Graph Search 
 
 - 从第三步和第四步中获取的所有进行进行搜索，获取所有满足条件的调用链。
 - 需要基于“interesting method”列表，一旦发现列表中的方法就输出反射链。
 
-![1562073998310](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1562073998310.png)
+![1562073998310](https://github.com/sunSUNQ/Paper_reading/raw/master/Automated%20Discovery%20of%20Deserialization%20Gadget%20%20Chains/image/1562073998310.png)
 
 ## 实验结果
 
 - 从mvnrepository.com以及javalibs.com网站上获得的100个最流行的java库做实验。
 
-![1562119654263](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1562119654263.png)
+![1562119654263](https://github.com/sunSUNQ/Paper_reading/raw/master/Automated%20Discovery%20of%20Deserialization%20Gadget%20%20Chains/image/1562119654263.png)
 
 - 可以很好的发现之前的已经公布反射链的存在
 
-![1562120010711](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1562120010711.png)
+![1562120010711](https://github.com/sunSUNQ/Paper_reading/raw/master/Automated%20Discovery%20of%20Deserialization%20Gadget%20%20Chains/image/1562120010711.png)
 
 - 发现了一些新的反射链的存在
 
-![1562120080963](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1562120080963.png)
+![1562120080963](https://github.com/sunSUNQ/Paper_reading/raw/master/Automated%20Discovery%20of%20Deserialization%20Gadget%20%20Chains/image/1562120080963.png)
 
-![1562120109879](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1562120109879.png)
+![1562120109879](https://github.com/sunSUNQ/Paper_reading/raw/master/Automated%20Discovery%20of%20Deserialization%20Gadget%20%20Chains/image/1562120109879.png)
 
-![1562120123190](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1562120123190.png)
+![1562120123190](https://github.com/sunSUNQ/Paper_reading/raw/master/Automated%20Discovery%20of%20Deserialization%20Gadget%20%20Chains/image/1562120123190.png)
 
-![1562120139985](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1562120139985.png)
+![1562120139985](https://github.com/sunSUNQ/Paper_reading/raw/master/Automated%20Discovery%20of%20Deserialization%20Gadget%20%20Chains/image/1562120139985.png)
 
-![1562120563674](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1562120563674.png)
+![1562120563674](https://github.com/sunSUNQ/Paper_reading/raw/master/Automated%20Discovery%20of%20Deserialization%20Gadget%20%20Chains/image/1562120563674.png)
 
-![1562120550215](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1562120550215.png)
+![1562120550215](https://github.com/sunSUNQ/Paper_reading/raw/master/Automated%20Discovery%20of%20Deserialization%20Gadget%20%20Chains/image/1562120550215.png)
 
-![1562120595977](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1562120595977.png)
+![1562120595977](https://github.com/sunSUNQ/Paper_reading/raw/master/Automated%20Discovery%20of%20Deserialization%20Gadget%20%20Chains/image/1562120595977.png)
 
 ## 结论
 
@@ -92,3 +92,4 @@
 ## 参考链接
 
 [BlackHat USA 2018 | 次日议题精彩解读](https://www.anquanke.com/post/id/155464#h3-10)
+[Gadget Inspector](https://github.com/JackOfMostTrades/gadgetinspector)
