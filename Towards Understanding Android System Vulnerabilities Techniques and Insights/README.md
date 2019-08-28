@@ -6,7 +6,7 @@
 
 ## 作者信息
 
-![1566911398423](https:\\github.com\sunSUNQ\Paper_reading\raw\master\Towards%20Understanding%20Android%20System%20Vulnerabilities%20Techniques%20and%20Insights\image\1566911398423.png)
+![1566911398423](https://github.com/sunSUNQ/Paper_reading/raw/master/Towards%20Understanding%20Android%20System%20Vulnerabilities%20Techniques%20and%20Insights/image/1566911398423.png)
 
 ## 摘要
 
@@ -48,7 +48,7 @@
 
 右侧是目录，每种漏洞都有详细的分类，然后cve以及补丁信息等都可以获得。
 
-![1566954626927](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1566954626927.png)
+![1566954626927](https://github.com/sunSUNQ/Paper_reading/raw/master/Towards%20Understanding%20Android%20System%20Vulnerabilities%20Techniques%20and%20Insights/image/1566954626927.png)
 
 ### 方法框架
 
@@ -57,7 +57,7 @@
 - 将收集到的信息进行整理与处理，存入到Cleaned DB中（ASB中的漏洞信息是手动录入的，EoP可能存在多种形式：elevation-of-privilege-vulnerability、elevation_of_privilege、eopv等，需要处理）
 - 通过三个分析器，将数据进行分析与处理生成结果进一步分析
 
-![1566954723856](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1566954723856.png)
+![1566954723856](https://github.com/sunSUNQ/Paper_reading/raw/master/Towards%20Understanding%20Android%20System%20Vulnerabilities%20Techniques%20and%20Insights/image/1566954723856.png)
 
 ### 3.1数据库设计
 
@@ -66,13 +66,13 @@
 - 一个文件可能包含多个修改代码片段
 - 一个片段可能有多行代码
 
-![1566957048017](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1566957048017.png)
+![1566957048017](https://github.com/sunSUNQ/Paper_reading/raw/master/Towards%20Understanding%20Android%20System%20Vulnerabilities%20Techniques%20and%20Insights/image/1566957048017.png)
 
-![1566957129591](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1566957129591.png)
+![1566957129591](https://github.com/sunSUNQ/Paper_reading/raw/master/Towards%20Understanding%20Android%20System%20Vulnerabilities%20Techniques%20and%20Insights/image/1566957129591.png)
 
 - 设计之后的数据库结构可以通过SQLite的内置函数进行直接查询
 
-![1566957230305](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1566957230305.png)
+![1566957230305](https://github.com/sunSUNQ/Paper_reading/raw/master/Towards%20Understanding%20Android%20System%20Vulnerabilities%20Techniques%20and%20Insights/image/1566957230305.png)
 
 ### 3.2漏洞模块提取
 
@@ -109,21 +109,21 @@ $$
 
 - 在提取差异的时：既要反应语法的变换，还要保存相关标记维持重要语义信息
 
-![1566959009636](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1566959009636.png)
+![1566959009636](https://github.com/sunSUNQ/Paper_reading/raw/master/Towards%20Understanding%20Android%20System%20Vulnerabilities%20Techniques%20and%20Insights/image/1566959009636.png)
 
 - 聚类算法流程
   - 从diff中提取信息得到diff change
   - 相似性矩阵的生成（每行是一个代码文本与其他的文本的相似度）计算字符串之间的距离（Jaro distance, **Jaro-Winkler distance**, Levenshtein distance, and Damerau-Levenshtein distance）
   - 利用亲和传播算法进行聚类生成集群
 
-![1566959168439](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1566959168439.png)
+![1566959168439](https://github.com/sunSUNQ/Paper_reading/raw/master/Towards%20Understanding%20Android%20System%20Vulnerabilities%20Techniques%20and%20Insights/image/1566959168439.png)
 
 ## 数据分析结果
 
 - 从Android Security Bulletin中发现近三年的漏洞公有2179个，1349个有补丁信息，从1349个有补丁的漏洞中提取了940个代码片段。
 - 80%以上都是高危的漏洞
 
-![1566959436290](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1566959436290.png)
+![1566959436290](https://github.com/sunSUNQ/Paper_reading/raw/master/Towards%20Understanding%20Android%20System%20Vulnerabilities%20Techniques%20and%20Insights/image/1566959436290.png)
 
 - java编码的漏洞（7.25%）比C/C++的少很多（92.75%），1349个补丁中java占154个，C/C++占1164个
 - kernel的漏洞占总数的65.7%、Native libraries占总数的23.9%（两个层都引入了大量的外来库，说明外来库的安全性比android本身的安全性更差）
@@ -131,27 +131,27 @@ $$
 - WIFI相关（WI-FI）：从kernel到框架到应用层都很多
 - 电话相关（Telephony）：应用层12个、框架层5个、硬件层一个
 
-![1566959630410](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1566959630410.png)
+![1566959630410](https://github.com/sunSUNQ/Paper_reading/raw/master/Towards%20Understanding%20Android%20System%20Vulnerabilities%20Techniques%20and%20Insights/image/1566959630410.png)
 
 - 1/3的高风险漏洞在decoder模块中，与ih264d相关度高、libstagefright媒体库、WLAN、bootloader等需要多注意
 
-![1566960050562](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1566960050562.png)
+![1566960050562](https://github.com/sunSUNQ/Paper_reading/raw/master/Towards%20Understanding%20Android%20System%20Vulnerabilities%20Techniques%20and%20Insights/image/1566960050562.png)
 
 - 60%的漏洞都可以在一个文件中修复完，80%在两个文件内
 - 一个补丁很多文件都需要修改是：版本修复或者系统更新导致的
 
-![1566960211457](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1566960211457.png)
+![1566960211457](https://github.com/sunSUNQ/Paper_reading/raw/master/Towards%20Understanding%20Android%20System%20Vulnerabilities%20Techniques%20and%20Insights/image/1566960211457.png)
 
 - 50%的漏洞可以在10行内修复、1/3的可以在5行内修复、1/5的可以在两行内修复
 - 1158个补丁中有110个只需要一行就可以修复（很多漏洞都是实施错误）
 
-![1566960334711](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1566960334711.png)
+![1566960334711](https://github.com/sunSUNQ/Paper_reading/raw/master/Towards%20Understanding%20Android%20System%20Vulnerabilities%20Techniques%20and%20Insights/image/1566960334711.png)
 
 ### 模式提取与聚类分析
 
 ​	940个短代码片段上运行聚类算法获取到83个聚类，其中50个每个聚类少于10个片段因此舍弃。剩下的33个中有28个是有明显的模式的，其中19个是与安全相关的模式，从19中提取了16个补丁模式，其中有六个是其他工作中没有提到过的漏洞类型。
 
-![1566960591031](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1566960591031.png)
+![1566960591031](https://github.com/sunSUNQ/Paper_reading/raw/master/Towards%20Understanding%20Android%20System%20Vulnerabilities%20Techniques%20and%20Insights/image/1566960591031.png)
 
 1. P1（new）：kernel地址泄露
 
