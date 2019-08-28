@@ -6,7 +6,7 @@
 
 ## 作者信息
 
-![1566911398423](C:\Users\varas\AppData\Roaming\Typora\typora-user-images\1566911398423.png)
+![1566911398423](https:\\github.com\sunSUNQ\Paper_reading\raw\master\Towards%20Understanding%20Android%20System%20Vulnerabilities%20Techniques%20and%20Insights\image\1566911398423.png)
 
 ## 摘要
 
