@@ -2,7 +2,7 @@
 
 ## 发表会议
 
-2019 Association for Computing Machinery （ACM2019）
+2019 ACM ASIA Conference on Computer and Communications Security （AsiaCCS2019）
 
 ## 作者信息
 
