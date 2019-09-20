@@ -50,7 +50,7 @@
 
    当我们想要测量文件之间的代码克隆总量时，我们计算相同的代码的token串百分比：
 
-   ![1568980855370]https://github.com/sunSUNQ/Paper_reading/raw/master/ReDeBug%20Finding%20Unpatched%20Code%20Clones%20in%20Entire%20OS%20Distributions/image/1568980855370.png)
+   ![1568980855370](https://github.com/sunSUNQ/Paper_reading/raw/master/ReDeBug%20Finding%20Unpatched%20Code%20Clones%20in%20Entire%20OS%20Distributions/image/1568980855370.png)
 
    通过任一计算，通常仅考虑相似性或包含性大于或等于某个预定阈值θ的情况。
 
