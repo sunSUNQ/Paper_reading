@@ -41,7 +41,7 @@
 
 ## 主要方法介绍
 
-![1568963248911](.\image\1568963248911.png)
+![1568963248911](https://github.com/sunSUNQ/Paper_reading/raw/master/VUDDY%20A%20Scalable%20Approach%20for%20Vulnerable%20Code%20Clone%20Discovery/image/1568963248911.png)
 
 ### S1 Function retrieval（函数提取）
 
@@ -53,23 +53,23 @@ VUDDY使用解析器来进行函数提取，执行语法分析用来识别形参
 
 - 0级（No abstraction）：为了检测类型1的代码克隆，不对代码进行抽象。
 
-  ![1568966810268](.\image\1568966810268.png)
+  ![1568966810268](https://github.com/sunSUNQ/Paper_reading/raw/master/VUDDY%20A%20Scalable%20Approach%20for%20Vulnerable%20Code%20Clone%20Discovery/image/1568966810268.png)
 
 - 1级（Formal parameter abstraction）：获取函数体中所有的参数，并将所有的参数替换为FPARAM
 
-  ![1568966820210](.\image\1568966820210.png)
+  ![1568966820210](https://github.com/sunSUNQ/Paper_reading/raw/master/VUDDY%20A%20Scalable%20Approach%20for%20Vulnerable%20Code%20Clone%20Discovery/image/1568966820210.png)
 
 - 2级（Local variable abstraction）：替换所有的变量为LVAR。
 
-  ![1568966829451](.\image\1568966829451.png)
+  ![1568966829451](https://github.com/sunSUNQ/Paper_reading/raw/master/VUDDY%20A%20Scalable%20Approach%20for%20Vulnerable%20Code%20Clone%20Discovery/image/1568966829451.png)
 
 - 3级（Data type abstraction）：代替所有的数据类型为DTYPE。
 
-  ![1568966838713](.\image\1568966838713.png)
+  ![1568966838713](https://github.com/sunSUNQ/Paper_reading/raw/master/VUDDY%20A%20Scalable%20Approach%20for%20Vulnerable%20Code%20Clone%20Discovery/image/1568966838713.png)
 
 - 4级（Function call abstraction）：代替所有的函数调用名为FUNCCALL。
 
-  ![1568966848298](.\image\1568966848298.png)
+  ![1568966848298](https://github.com/sunSUNQ/Paper_reading/raw/master/VUDDY%20A%20Scalable%20Approach%20for%20Vulnerable%20Code%20Clone%20Discovery/image/1568966848298.png)
 
 然后删除注释，空格，制表符和换行符以及将所有字符转换为小写来对抽象的函数体进行标准化。 
 
@@ -77,11 +77,11 @@ VUDDY使用解析器来进行函数提取，执行语法分析用来识别形参
 
 每一个函数的指纹表示成一个二元组，标准化后的函数字符串作为其中一项，字符串的hash作为另外一项。
 
-![1568967029819](.\image\1568967029819.png)
+![1568967029819](https://github.com/sunSUNQ/Paper_reading/raw/master/VUDDY%20A%20Scalable%20Approach%20for%20Vulnerable%20Code%20Clone%20Discovery/image/1568967029819.png)
 
 VUDDY将元组存储在dict中，将键映射到值，其中长度值（即元组的第一个元素）是键，而共享相同键的哈希值则映射到每个键。长度少于50的忽略掉。具体实例如下：
 
-![1568967094649](.\image\1568967094649.png)
+![1568967094649](https://github.com/sunSUNQ/Paper_reading/raw/master/VUDDY%20A%20Scalable%20Approach%20for%20Vulnerable%20Code%20Clone%20Discovery/image/1568967094649.png)
 
 ### S4 Key lookup（关键字匹配）
 
@@ -110,7 +110,7 @@ VUDDY通过迭代dict中的每个键，在目标指纹字典中查找密钥的�
 
 原补丁信息以及提取出的易受攻击的代码片段。
 
-![1568968112407](.\image\1568968112407.png)
+![1568968112407](https://github.com/sunSUNQ/Paper_reading/raw/master/VUDDY%20A%20Scalable%20Approach%20for%20Vulnerable%20Code%20Clone%20Discovery/image/1568968112407.png)
 
 将相同的方法应用于9,770个漏洞补丁，收集了5,664个易受攻击的函数，这些函数可以处理1,764个独特的CVE。这些易受攻击的函数的漏洞涵盖多种类型，例如缓冲区溢出，整数溢出，输入验证错误，与权限相关的漏洞等。 最短的易受攻击的函数在抽象和规范化之后由51个字符组成。单行函数（例如，通过调用另一个函数返回的保护函数）被排除在数据库之外，因为这些函数在应用抽象时经常导致误报。
 
@@ -138,23 +138,23 @@ dict生成：python内置字典。
 
   首先，我们根据不同的目标程序大小，针对四种公开可用的技术（SourcererCC，ReDeBug，DECKARD和CCFinderX）评估了VUDDY的可扩展性。关注工具的可扩展性时处理真实项目，通过从收集的25,253个Git项目中随机选择项目，生成不同大小的目标集，从1 KLoC到1 BLoC。 所有实验每次迭代五次（SourcererCC除外，我们迭代两次）以确保结果可靠。实验结果以及不同工具的配置选择如下（说明VUDDY效率高，并且具备对大规模代码的处理能力）：
 
-  ![1568969276067](.\image\1568969276067.png)
+  ![1568969276067](https://github.com/sunSUNQ/Paper_reading/raw/master/VUDDY%20A%20Scalable%20Approach%20for%20Vulnerable%20Code%20Clone%20Discovery/image/1568969276067.png)
 
-  ![1568969321435](.\image\1568969321435.png)
+  ![1568969321435](https://github.com/sunSUNQ/Paper_reading/raw/master/VUDDY%20A%20Scalable%20Approach%20for%20Vulnerable%20Code%20Clone%20Discovery/image/1568969321435.png)
 
-  ![1568969584748](.\image\1568969584748.png)
+  ![1568969584748](https://github.com/sunSUNQ/Paper_reading/raw/master/VUDDY%20A%20Scalable%20Approach%20for%20Vulnerable%20Code%20Clone%20Discovery/image/1568969584748.png)
 
 - 准确率评测
 
   使用每种技术进行克隆检测，然后手动检查每个报告的克隆。
 
-  ![1568969599565](.\image\1568969599565.png)
+  ![1568969599565](https://github.com/sunSUNQ/Paper_reading/raw/master/VUDDY%20A%20Scalable%20Approach%20for%20Vulnerable%20Code%20Clone%20Discovery/image/1568969599565.png)
 
 - 和ReDeBug对比实验
 
-  ![1568969727698](.\image\1568969727698.png)
+  ![1568969727698](https://github.com/sunSUNQ/Paper_reading/raw/master/VUDDY%20A%20Scalable%20Approach%20for%20Vulnerable%20Code%20Clone%20Discovery/image/1568969727698.png)
 
-  ![1568969747935](.\image\1568969747935.png)
+  ![1568969747935](https://github.com/sunSUNQ/Paper_reading/raw/master/VUDDY%20A%20Scalable%20Approach%20for%20Vulnerable%20Code%20Clone%20Discovery/image/1568969747935.png)
 
 ## 结论
 
