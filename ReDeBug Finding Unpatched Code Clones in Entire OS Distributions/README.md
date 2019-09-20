@@ -46,11 +46,11 @@
 
 4. 给定两组fa和fb的n-tokens，我们计算相同的代码数量。当找到未修补的代码克隆时，如果fa是原始的错误代码片段，我们计算：
 
-   ![1568980811766](.\image\1568980811766.png)
+   ![1568980811766](https://github.com/sunSUNQ/Paper_reading/raw/master/ReDeBug%20Finding%20Unpatched%20Code%20Clones%20in%20Entire%20OS%20Distributions/image/1568980811766.png)
 
    当我们想要测量文件之间的代码克隆总量时，我们计算相同的代码的token串百分比：
 
-   ![1568980855370](.\image\1568980855370.png)
+   ![1568980855370]https://github.com/sunSUNQ/Paper_reading/raw/master/ReDeBug%20Finding%20Unpatched%20Code%20Clones%20in%20Entire%20OS%20Distributions/image/1568980855370.png)
 
    通过任一计算，通常仅考虑相似性或包含性大于或等于某个预定阈值θ的情况。
 
@@ -62,11 +62,11 @@ ReDeBug查找修补程序所在的未修补的UNIX代码克隆统一diff格式�
 
 原始的错误代码包括补丁删除的所有代码。 但是，查找已更改的行是不够的：我们还必须考虑补丁的周围上下文。图中补丁一可以明显的发现更改的是strcpy函数，但是补丁二需要考虑上下文信息。
 
-![1568981519461](.\image\1568981519461.png)
+![1568981519461](https://github.com/sunSUNQ/Paper_reading/raw/master/ReDeBug%20Finding%20Unpatched%20Code%20Clones%20in%20Entire%20OS%20Distributions/image/1568981519461.png)
 
 ### 整体框架
 
-![1568981642959](.\image\1568981642959.png)
+![1568981642959](https://github.com/sunSUNQ/Paper_reading/raw/master/ReDeBug%20Finding%20Unpatched%20Code%20Clones%20in%20Entire%20OS%20Distributions/image/1568981642959.png)
 
 1. **预处理源数据**。
 
@@ -125,11 +125,11 @@ ReDeBug在大约1000行C代码和250行Python中实现。 规范化在Python代�
 
 收集了两次源代码数据集：2011年初和2011年末。首先在2011年1月/ 3月收集了2011年初数据集（Σ1）：Debian 5.0 Lenny和Ubuntu 10.10 Maverick的所有源代码包，以及所有公共SourceForge C / C ++项目使用版本控制系统。 2011年11月，我们准备了2011年末数据集（Σ2）：Debian 6.0 Squeeze和Ubuntu 11.10 Oneiric的所有源代码包。表I显示了数据集的详细分解。该数据集包含大量以多种语言编写的项目，包括C，C ++，Java，Shell，Perl，Python，Ruby和PHP。
 
-![1568984014988](.\image\1568984014988.png)
+![1568984014988](https://github.com/sunSUNQ/Paper_reading/raw/master/ReDeBug%20Finding%20Unpatched%20Code%20Clones%20in%20Entire%20OS%20Distributions/image/1568984014988.png)
 
 对两个数据集的简单介绍：
 
-![1568984269638](.\image\1568984269638.png)
+![1568984269638](https://github.com/sunSUNQ/Paper_reading/raw/master/ReDeBug%20Finding%20Unpatched%20Code%20Clones%20in%20Entire%20OS%20Distributions/image/1568984269638.png)
 
 ### 默认参数
 
@@ -139,42 +139,42 @@ diff文件中的默认上下文是3行代码。在未修补的代码克隆的所
 
 - 为每个源代码数据集创建数据库。下图显示了数据库构建时间。Ubuntu Maverick和Debian Lenny的数据库构建大约需要6个小时。 SourceForge的数据库构建大约需要23.3小时。实验表明，随着源代码大小的增加，构建数据库的时间会线性增加。 一旦ReDeBug构建了初始数据库，就可以通过仅添加/更改数据库的相关部分来快速完成增量更新。
 
-  ![1568984616153](.\image\1568984616153.png)
+  ![1568984616153](https://github.com/sunSUNQ/Paper_reading/raw/master/ReDeBug%20Finding%20Unpatched%20Code%20Clones%20in%20Entire%20OS%20Distributions/image/1568984616153.png)
 
 - 表中描述了生成的数据库大小以及数据库中的项目和文件数。
 
-  ![1568984682998](.\image\1568984682998.png)
+  ![1568984682998](https://github.com/sunSUNQ/Paper_reading/raw/master/ReDeBug%20Finding%20Unpatched%20Code%20Clones%20in%20Entire%20OS%20Distributions/image/1568984682998.png)
 
 - 描述了向每个数据库查询1,634个与安全相关的补丁的时间。 随着的数据库中的文件数目增长，查询漏洞的时间呈线性增长。 
 
-  ![1568984789666](.\image\1568984789666.png)
+  ![1568984789666](https://github.com/sunSUNQ/Paper_reading/raw/master/ReDeBug%20Finding%20Unpatched%20Code%20Clones%20in%20Entire%20OS%20Distributions/image/1568984789666.png)
 
 - 图显示了将不同数量的漏洞与整个数据库进行比较所花费的时间。查询时间具有非常平缓的向上斜率。
-  ![1568984889584](.\image\1568984889584.png)
+  ![1568984889584](https://github.com/sunSUNQ/Paper_reading/raw/master/ReDeBug%20Finding%20Unpatched%20Code%20Clones%20in%20Entire%20OS%20Distributions/image/1568984889584.png)
 
 - 1）{δ1＆δ2}→Σ1：查询δ1和δ2到Σ1以测量检测到的未修补代码克隆的数量，这近似于当补丁可用时攻击者可能发现的多少（可能）易受攻击的项目。
 
-  ![1568985338433](.\image\1568985338433.png) 
+  ![1568985338433](https://github.com/sunSUNQ/Paper_reading/raw/master/ReDeBug%20Finding%20Unpatched%20Code%20Clones%20in%20Entire%20OS%20Distributions/image/1568985338433.png) 
 
 - 2）{δ1＆δ2}→Σ2：测量了Σ2中δ1和δ2识别出多少未修补的代码克隆，这个评估大致反映了新版操作系统的对以前发布的安全相关补丁的相应程度。 
 
 - 3）δ1→Σ1对δ1→Σ2：比较了Σ1中的1,838个未修补的代码克隆和Σ2中的1,991个未修补的代码克隆的δ1，我们发现1,379个未修补的代码克隆已经存在。
 
-  ![1568985357772](.\image\1568985357772.png)
+  ![1568985357772](https://github.com/sunSUNQ/Paper_reading/raw/master/ReDeBug%20Finding%20Unpatched%20Code%20Clones%20in%20Entire%20OS%20Distributions/image/1568985357772.png)
 
 - 图描绘了发现补丁克隆的频率分布。
 
-  ![1568985407056](.\image\1568985407056.png)
+  ![1568985407056](https://github.com/sunSUNQ/Paper_reading/raw/master/ReDeBug%20Finding%20Unpatched%20Code%20Clones%20in%20Entire%20OS%20Distributions/image/1568985407056.png)
 
 - 表显示了具有不同大小n的已识别的未修补代码克隆的数量。
 
-  ![1568985460015](.\image\1568985460015.png)
+  ![1568985460015](https://github.com/sunSUNQ/Paper_reading/raw/master/ReDeBug%20Finding%20Unpatched%20Code%20Clones%20in%20Entire%20OS%20Distributions/image/1568985460015.png)
 
 - （然后介绍了一些样例，为啥没检测出来还有成功检测的样例）
 
 - 为了理解代码重复的总量，运行了一个大规模的实验来测量整个Debian Lenny源代码库中的相似性。
 
-  ![1568985637815](.\image\1568985637815.png)
+  ![1568985637815](https://github.com/sunSUNQ/Paper_reading/raw/master/ReDeBug%20Finding%20Unpatched%20Code%20Clones%20in%20Entire%20OS%20Distributions/image/1568985637815.png)
 
 
 
