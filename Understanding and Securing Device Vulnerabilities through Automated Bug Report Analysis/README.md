@@ -40,8 +40,7 @@ IoT设备的漏洞很多，最近越来越收到关注，今年多个论文工�
 
    选取了8款常用的比较典型的设备，以及其匹配的漏洞信息。
 
-   <img src="image\image-20191203152938960.png" alt="image-20191203152938960" style="zoom:50%;" />
-
+![image-20191120155655388](https:\\github.com\sunSUNQ\Paper_reading\raw\master\Understanding%20and%20Securing%20Device%20Vulnerabilities%20through%20Automated%20Bug%20Report%20Analysis\image\image-20191203152938960.png)
    设计了蜜罐部署的结构。（具体不做介绍）
 
    <img src="image\image-20191203153202232.png" alt="image-20191203153202232" style="zoom:50%;" />
