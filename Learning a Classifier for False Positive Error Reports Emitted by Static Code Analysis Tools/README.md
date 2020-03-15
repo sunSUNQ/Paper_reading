@@ -18,7 +18,7 @@ Static Code Analysis(SCA)，现有的工具都存在大量的误报问题，人�
 
 ## Approach
 
-![image-20200312194035157](.\image-20200312194035157.png)
+![image-20200312194035157](https://github.com/sunSUNQ/Paper_reading/raw/master/Learning%20a%20Classifier%20for%20False%20Positive%20Error%20Reports%20Emitted%20by%20Static%20Code%20Analysis%20Tools/image/image-20200312194035157.png)
 
 ### 2.1 code preprocessing
 
@@ -69,7 +69,7 @@ Precision：正确分类的误报/确认误报
 
 Accuracy：正确分类的样本数量
 
-![image-20200312200300167](.\image-20200312200300167.png)
+![image-20200312200300167](https://github.com/sunSUNQ/Paper_reading/raw/master/Learning%20a%20Classifier%20for%20False%20Positive%20Error%20Reports%20Emitted%20by%20Static%20Code%20Analysis%20Tools/image/image-20200312200300167.png)
 
 ## Conclusion and Future work
 
