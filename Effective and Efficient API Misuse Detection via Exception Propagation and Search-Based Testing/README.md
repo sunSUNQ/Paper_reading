@@ -47,7 +47,7 @@ API的误用会导致一系列的安全问题，对用户输入的验证不足�
 
 如果st小于3个token的情况，则会抛出一个新的异常，引发程序崩溃。
 
-![image-20201023150252784](.\images\image-20201023150252784.png)
+![image-20201023150252784](https://github.com/sunSUNQ/Paper_reading/raw/master/Effective%20and%20Efficient%20API%20Misuse%20Detection%20via%20Exception%20Propagation%20and%20Search-Based%20Testing/images/image-20201023150252784.png)
 
 API误用有很多种，本文主要关注与触发crash相关的误用情况（代表了大多数的误用情况）。有很多的静态分析方法可以分析出来这些位置，但是都存在大量的误报，需要结合动态分析去具体实现触发，减少误报情况。分析API误用的研究工作有很多，本文是第一个针对crash类型的API误用与自动生成测试样例结合起来的工作。
 
